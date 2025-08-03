@@ -26,41 +26,41 @@ Configurar o arquivo .env:
 - DATABASE_URL=postgresql://usuario:senha@localhost:5432/chat_instentions
 
 Instalar o PostgreSQL e criar a tabela:
-- CREATE TABLE chat_intentions (
-  id SERIAL PRIMARY KEY,
-  keyword TEXT NOT NULL,
-  response TEXT NOT NULL
+- CREATE TABLE chat_intentions ( \
+  id SERIAL PRIMARY KEY, \
+  keyword TEXT NOT NULL, \
+  response TEXT NOT NULL \
 )
 
-Inserir algumas instâncias básicas:
-- INSERT INTO chat_intentions (keyword, response) 
-VALUES
-('oi', 'Olá! Como posso te ajudar? 😊'),
-('saldo', 'Você pode consultar seu saldo diretamente no app do Cartão de Benefícios.'),
-('cartão', 'O Cartão de Benefícios pode ser usado em várias categorias, conforme configurado pela empresa.'),
-('atendimento', 'Nosso suporte funciona de segunda a sexta, das 9h às 18h através do telefone (11) 98877-6655. Mas você pode tirar suas dúvidas aqui comigo, também!'),
-('ajuda', 'Claro! Me diga com o que você precisa de ajuda.');
+Inserir algumas instâncias básicas: 
+- INSERT INTO chat_intentions (keyword, response) \
+VALUES \
+('oi', 'Olá! Como posso te ajudar?'), \
+('saldo', 'Você pode consultar seu saldo diretamente no app do Cartão de Benefícios.'), \
+('cartão', 'O Cartão de Benefícios pode ser usado em várias categorias, conforme configurado pela empresa.'), \
+('atendimento', 'Nosso suporte funciona de segunda a sexta, das 9h às 18h através do telefone (11) 98877-6655. Mas você pode tirar suas dúvidas aqui comigo, também!'), \
+('ajuda', 'Claro! Me diga com o que você precisa de ajuda.') \
 
 5. Como utilizar
 
-Rota de Consulta:
+Rota de Consulta: 
 
-[POST] /chat/send
-Body: { "message": "Text"}
+[POST] /chat/send \
+Body: { "message": "Text"} \
 
-EXEMPLO DE USO:
-POST /chat/send
-Content-Type: application/json
-{
-  "message": "Como vejo meu saldo?"
-}
+EXEMPLO DE USO: \
+POST /chat/send \
+Content-Type: application/json \
+{ \
+  "message": "Como vejo meu saldo?" \
+} \
 
-RESPOSTA: 
-POST /chat/send
-Content-Type: application/json
+RESPOSTA: \
+POST /chat/send \
+Content-Type: application/json \
 
-{
-  "response": "Você pode consultar seu saldo diretamente no app do Cartão de Benefícios."
+{ \
+  "response": "Você pode consultar seu saldo diretamente no app do Cartão de Benefícios." \
 }
 
 
