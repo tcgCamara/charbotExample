@@ -1,7 +1,10 @@
-import db from "../db/dbConnection.js" 
+import db from "../../db/dbConnection.js" 
 
 async function seekAutomaticResponse (message) {
-      
+
+    //used to when requested data in DB is not found
+    const dataNotFound = 'Desculpe, não consegui entender. Você pode tentar de novo?'
+
     const result = await db.query(
         `SELECT response 
         FROM chat_intentions 
@@ -10,8 +13,7 @@ async function seekAutomaticResponse (message) {
         [message]
     )
 
-    console.log('Query defined.')
-    return result.rows[0]? result.rows[0].response : {message: 'Desculpe, não consegui entendi. Você pode tentar de novo?'}
+    return result.rows[0]? result.rows[0].response : dataNotFound
 
 }
 
