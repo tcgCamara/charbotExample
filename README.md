@@ -1,4 +1,4 @@
-1. Chatbot Simples - Caju Benefícios
+1. Chatbot Simples - Cartão de Benefícios
 
 Este projeto é um chatbot simples desenvolvido com Node.js, Express e PostgreSQL. Ele simula um assistente virtual capaz de identificar palavras-chave em mensagens e responder com base em intenções pré-definidas armazenadas no banco de dados. A ideia foi inspirada na experiência de atendimento de uma empresa de cartão de benefícios.
 
